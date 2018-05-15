@@ -11,7 +11,6 @@ class daysApi{
             console.log(data)
         })
     }
-
     uploadPhoto(form){
 
         return $(form).ajaxSubmit({
@@ -26,6 +25,22 @@ class daysApi{
             }
         });
           return false;
+    }
+    fetchDay(date){
+        return $.ajax({
+            method: "GET",
+            url: "/days/" + date
+        }).catch(function(data){
+            console.log(data)
+        })
+    }
+    deleteImage(date, id){
+        return $.ajax({
+            method: "DELETE",
+            url: "/days/" + date + "/images/" + id
+        }).catch(function(data){
+            console.log(data)
+        })
     }
 
     }
