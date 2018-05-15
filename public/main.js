@@ -6,6 +6,7 @@ let dayRepository = new DaysRepository();
 let renderer = new Renderer();
 let eventsHandler = new EventsHandler(dayRepository, renderer);
 
+
 eventsHandler.registerAddPost();
 eventsHandler.registerRemovePost();
 eventsHandler.registerToggleComments();
