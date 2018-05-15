@@ -29,4 +29,9 @@ class DaysRepository {
             }
         })
     }
+    removeImage(date, id){
+        this.daysApi.deleteImage(date, id).then((data)=>{
+            this.images = data.images
+        })
+    }
 }

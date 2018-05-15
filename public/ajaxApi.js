@@ -19,6 +19,14 @@ class daysApi{
             console.log(data)
         })
     }
+    deleteImage(date, id){
+        return $.ajax({
+            method: "DELETE",
+            url: "/days/" + date + "/images/" + id
+        }).catch(function(data){
+            console.log(data)
+        })
+    }
     }
 
 class wordApi{
