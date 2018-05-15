@@ -18,4 +18,4 @@ eventsHandler.upPhoto();
 var getDay = dayRepository.initData();
 getDay.then( () => {
     
-    renderer.renderday(postsRepository.posts)});
+    renderer.renderDay(postsRepository.posts)});

@@ -13,7 +13,9 @@ class DaysRepository {
             this.images = data.images
             } else {
                 this.wordApi.fetch().then((data)=>{
+                    var today = new Date;
                     this.word = data.word
+                    this.day = today
                 })
             }
         })
