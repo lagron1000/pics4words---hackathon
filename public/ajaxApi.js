@@ -11,6 +11,14 @@ class daysApi{
             console.log(data)
         })
     }
+    fetchDay(date){
+        return $.ajax({
+            method: "GET",
+            url: "/days/" + date
+        }).catch(function(data){
+            console.log(data)
+        })
+    }
     }
 
 class wordApi{

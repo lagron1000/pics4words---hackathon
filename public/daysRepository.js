@@ -18,4 +18,15 @@ class DaysRepository {
             }
         })
     }
+    findDate(date){
+        return this.daysApi.fetchDay(date).then((data)=>{
+            if (data.word){
+                this.day = data.day;
+                this.word = data.word;
+                this.images = data.images;
+            } else {
+                console.log('Error: Day not available');
+            }
+        })
+    }
 }
