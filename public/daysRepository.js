@@ -18,4 +18,14 @@ class DaysRepository {
             }
         })
     }
+
+    addImage(){
+        // need to find the closest form 
+        // var form = $().closest();
+        var newPhoto = this.daysApi.uploadPhoto(form);
+        newPhoto.then( (data) => {
+            this.images.push(data)
+        })
+        
+    }
 }

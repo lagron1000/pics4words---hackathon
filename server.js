@@ -42,18 +42,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // You will need to create 5 server routes
 // These will define your API:
 
-// 1) to handle getting all photoss and their comments
+//1) to handle getting all photos and their comments
 
-    //  app.get('/posts',function (req, res){
-          
-    //       //console.log('passei')
-    //       Post.find(function (req, posts){
-    //       //  console.log(posts)
-    //         res.send(posts);
-
-    //       })
-          
-    //  })
+     app.get('/days',function (req, res){
+                    
+          Day.find(function (req, posts){
+             res.send(posts);
+          })
+     })
 
      
 
@@ -155,6 +151,16 @@ app.post('/upload', upload.single('imagename'), function(req, res, next) {
   console.log("updating photo ////")
   
   var image = req.file.filename;
+  var newImage = new Image()
+  img.url = image;
+  img.user = req.title // ???
+  img.save(function (err, respond){
+    if(err)
+        res.send("failed")
+    else{
+      res.send("Saved")
+    }
+  })
  /** rest */ 
 });
 
