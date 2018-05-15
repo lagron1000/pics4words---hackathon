@@ -18,6 +18,15 @@ class DaysRepository {
             }
         })
     }
+
+    addImage(){
+        // need to find the closest form 
+        // var form = $().closest();
+        var newPhoto = this.daysApi.uploadPhoto(form);
+        newPhoto.then( (data) => {
+            this.images.push(data)
+        })
+        
     findDate(date){
         return this.daysApi.fetchDay(date).then((data)=>{
             if (data.word){

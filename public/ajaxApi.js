@@ -11,6 +11,21 @@ class daysApi{
             console.log(data)
         })
     }
+    uploadPhoto(form){
+
+        return $(form).ajaxSubmit({
+            data: {title: form.title},
+            contentType: 'application/json',
+            
+            success: function(response){
+              console.log('image uploaded and form submitted');     
+            },
+            error:function(res, err){
+                console.error(err);
+            }
+        });
+          return false;
+    }
     fetchDay(date){
         return $.ajax({
             method: "GET",
@@ -27,6 +42,7 @@ class daysApi{
             console.log(data)
         })
     }
+
     }
 
 class wordApi{
@@ -42,3 +58,10 @@ class wordApi{
         })
     }
 }
+
+
+    
+
+
+
+
