@@ -14,5 +14,5 @@ let commentSchema = new Schema({
 let Comment = mongoose.model('comment', commentSchema)
 
 
-module.exports = Image;
+module.exports = Comment;
 
