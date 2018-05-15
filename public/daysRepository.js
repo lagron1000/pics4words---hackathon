@@ -26,6 +26,7 @@ class DaysRepository {
         newPhoto.then( (data) => {
             this.images.push(data)
         })
+    }
         
     findDate(date){
         return this.daysApi.fetchDay(date).then((data)=>{

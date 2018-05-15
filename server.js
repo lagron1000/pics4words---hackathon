@@ -46,12 +46,44 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
      app.get('/days',function (req, res){
                     
-          Day.find(function (req, posts){
-             res.send(posts);
+          Day.find(function (req, day){
+             res.send(day);
           })
      })
 
-     
+
+//2) to handle getting a specific Date
+
+    app.get('/days:date',function (req, res){
+                        
+        var date = req.params.date;
+        Day.find({day : date}, function (req, day){
+           res.send(day);
+        })
+    })
+
+
+
+//3) to handle deleting an Image
+
+     app.delete('/delete/:day/images:id', function (req,res){
+    
+        var id = req.params.id;
+            
+        Image.find({ _id: id}, (req,res) =>{
+          console.log(res)
+        })
+        
+        Image.remove({ _id : id}, function(err, res1){
+           if(err)
+             res.send("failed")
+           else{
+            
+            console.log ("removed")
+            res.send("Deleted")
+           }
+        })
+  })   
 
      
 
@@ -73,26 +105,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //   })
 
-//3) to handle deleting a post
 
-//      app.delete('/delete/:id', function (req,res){
-       
-//         id = req.params.id;
-              
-//         Post.find({ _id: id}, (req,res) =>{
-//           console.log(res)
-//         })
-        
-//         Post.remove({ _id : id}, function(err, res1){
-//            if(err)
-//              res.send("failed")
-//            else{
-            
-//             console.log ("removed")
-//             res.send("Deleted")
-//            }
-//         })
-//   })
 
 // 4) to handle adding a comment to a post
 
