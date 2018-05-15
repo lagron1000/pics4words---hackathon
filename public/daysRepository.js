@@ -1,5 +1,5 @@
 class DaysRepository {
-    constructor(date, word, daysApi, wordApi){
+    constructor(daysApi, wordApi,date, word){
         this.daysApi = daysApi;
         this.wordApi = wordApi;
         this.day = date;
@@ -47,3 +47,5 @@ class DaysRepository {
         })
     }
 }
+
+export default DaysRepository;
