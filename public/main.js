@@ -1,18 +1,22 @@
-import DaysRepository from './daysrepository.js';
-import Renderer from './renderer.js';
-import EventsHandler from './eventsHandler.js'; 
+import DaysRepository from './daysRepository.js';
+import renderer from './renderer.js';
+import eventsHandler from './eventsHandler.js'; 
+import daysApi from './ajaxApi.js'
+import wordApi from './wordApi.js'
 
-let dayRepository = new DaysRepository();
-let renderer = new Renderer();
-let eventsHandler = new EventsHandler(dayRepository, renderer);
+let DayApi = new daysApi();
+let WordApi = new wordApi()
+let dayRepository = new DaysRepository(DayApi, WordApi);
+let Renderer = new renderer();
+let EventsHandler = new eventsHandler(dayRepository, renderer);
 
 
-eventsHandler.registerAddPost();
-eventsHandler.registerRemovePost();
-eventsHandler.registerToggleComments();
-eventsHandler.registerAddComment();
-eventsHandler.registerRemoveComment();
-eventsHandler.upPhoto();
+EventsHandler.registerAddImage();
+// eventsHandler.registerRemovePost();
+// eventsHandler.registerToggleComments();
+// eventsHandler.registerAddComment();
+// eventsHandler.registerRemoveComment();
+// eventsHandler.upPhoto();
 
 
 

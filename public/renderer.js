@@ -12,3 +12,5 @@ class renderer{
         }
     }
 }
+
+export default renderer;
