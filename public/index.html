@@ -29,18 +29,24 @@
             <li class="nav-item">
                <a class="nav-link" href="#">Link</a>
             </li> -->
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">
                   <span>Today</span>
                </a>
-               
+
                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Action</a>
                   <a class="dropdown-item" href="#">Another action</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Something else here</a>
                </div>
+            </li> -->
+            
+            <li class="nav-item">
+               <span>Sumbit your </span>
+               <span>flower </span>
+               <span>picture</span>
             </li>
             <!-- <li class="nav-item">
                <a class="nav-link disabled" href="#">Disabled</a>
@@ -54,35 +60,26 @@
    </nav>
 
    <header>
-      <div class="jumbotron jumbotron-fluid headerDescription_">
+      <!-- <div class="jumbotron jumbotron-fluid headerDescription_">
          <div class="container">
             <h1 class="display-4">Pics4words</h1>
-            <!-- <p class="lead">Upload your photo in reference to the daily word</p> -->
             <p class="lead">Upload your photo inspired by the daily word</p>
-            <!-- <p class="lead">Get a daily word & upload your picture</p> -->
          </div>
-      </div>
+      </div> -->
 
       <div class="jumbotron jumbotron-fluid headerUpload_">
-         <div class="container">
-            <p>
-               <span>Daily Word</span>
-               <!-- <span>- 17.05</span> -->
-            </p>
+         <div class="container headerUploadContainer_">
+            <p>Daily Word</p>
             <h1 class="todaysWord" id="data-num">
-
                <span>Flower</span>
             </h1>
-
-            <!-- <label class="custom-file">
-            <input type="file" id="file" class="custom-file-input">
-            <span class="custom-file-control"></span>
-         </label> -->
-
-            <div class="custom-file photoUpload_">
-               <input type="file" class="custom-file-input" id="imagename" name="imagename">
-               <label class="custom-file-label" for="customFile">Choose file</label>
-            </div>
+            <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
+               <div class="custom-file photoUpload_">
+                  <input type="file" class="custom-file-input uploadPicture_" id="imagename" name="imagename">
+                  <label class="custom-file-label uploadImageLabel_" for="customFile">Upload flower picture</label>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+               </div>
+            </form>
 
          </div>
       </div>
@@ -280,18 +277,6 @@
          </div>
       </div>
    </div>
-   <div class="today flex">
-      <div class="imgloc">Div</div>
-      <div class="imgloc">Div</div>
-      <div class="imgloc">Div</div>
-      <div class="imgloc">Div</div>
-      <div class="imgloc">Div</div>
-      <div class="imgloc">Div</div>
-      <div class="imgloc">Div</div>
-      <div class="imgloc">Div</div>
-      <div class="imgloc">Div</div>
-   </div>
-
 
 
 
