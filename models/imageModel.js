@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 
 
 let imageSchema = new Schema({
+    
     url: String,
     user: String,
     rating: Number,

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lagron1000/pics4words---hackathon#readme",
   "dependencies": {
+    "@claviska/jquery-ajaxSubmit": "^2.0.3",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.1",
     "express": "^4.16.3",

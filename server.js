@@ -160,11 +160,11 @@ var storage = multer.diskStorage({
 });
 var upload = multer({storage: storage});
 
-app.post('/upload', upload.single('imagename'), function(req, res, next) {
+app.post('/add', upload.single('imagename'), function(req, res, next) {
   console.log("updating photo ////")
   
   var image = req.file.filename;
-  var newImage = new Image()
+  var img = new Image()
   img.url = image;
   img.user = req.title // ???
   img.save(function (err, respond){

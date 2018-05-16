@@ -19,8 +19,9 @@ EventsHandler.registerAddImage();
 // eventsHandler.upPhoto();
 
 
-
-var getDay = dayRepository.initData();
+var currentDay = new Date()
+var getFullDay = currentDay.getMonth()+1 + '-' + currentDay.getDate() + '-' + currentDay.getFullYear()
+var getDay = dayRepository.initData(getFullDay);
 getDay.then( () => {
     
     renderer.renderDay(postsRepository.posts)});

@@ -7,27 +7,34 @@ class DaysRepository {
         this.images = []
     }
     initData(){
-        return this.daysApi.fetch().then((data)=>{
-            if (data.word && data.image){
+        return this.daysApi.fetchDay(date).then((data)=>{
+            if (data.word){
+            this.day = data.day;
             this.word = data.word;
             this.images = data.images
             } else {
                 this.wordApi.fetch().then((data)=>{
                     var today = new Date;
+                    var getFullDay = today.getMonth()+1 + '-' + today.getDate() + '-' + today.getFullYear()
                     this.word = data.word
                     this.day = today
+                    this.addDay(this.day, this.word)
                 })
             }
         })
     }
+    addDay(day, word){
+        var dayObj = {day: day, word: word}
+        return this.daysApi.postDay(dayObj)
+    }
 
-    addImage(){
-        // need to find the closest form 
-        // var form = $().closest();
-        var newPhoto = this.daysApi.uploadPhoto(form);
-        newPhoto.then( (data) => {
-            this.images.push(data)
-        })
+    addImage(form){
+        
+        
+        this.daysApi.uploadPhoto(form);
+        // newPhoto.then( (data) => {
+        //     this.images.push(data)
+        // })
     }
         
     findDate(date){
