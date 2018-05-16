@@ -7,6 +7,10 @@
    Old Font: font-family: "Droid Serif", "Helvetica Neue", sans-serif;
 */
 
+
+main {
+   padding: 20px;
+}
 .page-header {
    font-family: "Droid Serif", "Helvetica Neue", sans-serif;
    font-style: italic;
@@ -39,11 +43,18 @@
     color: white;
   } */
 
-.jumbi_ {
+
+.header_description_ {
    text-align: center;
    margin-bottom: 0px;
-   border-bottom: 1px solid #a1a1a1;
-   padding: 2.5rem 1rem;
+   /* border-bottom: 1px solid #a1a1a1; */
+   padding: 1.5rem 1rem;
+}
+.header_upload_ {
+   text-align: center;
+   margin-bottom: 0px;
+   /* border-bottom: 1px solid #a1a1a1; */
+   padding: 1.5rem 1rem;
 }
 
 .intro-text {
@@ -68,13 +79,6 @@
    padding: 20px;
 }
 
-
-.imgloc {
-   width: 33%;
-   text-align: center;
-   padding: 2px;
-}
-
 .photoUpload_ {
    width: 300px;
 }
@@ -91,7 +95,7 @@
    font-family: 'PT Serif', serif;
    font-size: 2.5rem;
    font-weight: 700;
-   padding-bottom: 2rem;
+   padding-bottom: 1rem;
 }
 /** Unknown additional CSS for the image gallery columns
 
