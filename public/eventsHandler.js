@@ -4,16 +4,18 @@ class eventsHandler {
         this.renderer = renderer;
         this.$day = $(".uploadImage");
     }
-        // registerAddImage(){
-        //     $('.uploadImage').submit( (e) =>{
-        //         e.preventDefault();
-                
-        //         this.daysRepository.addImage(this)
+        registerAddImage(){
+            $('#butsubmit').click( (e) =>{
+                this.daysRepository.addImage(e).then( () => {
+                    this.renderer.renderDay(this.daysRepository.images)
+                })
+                    
+             })
+            
 
-        //     });
                 
             
-        // }
+        }
     }
 
 export default eventsHandler;

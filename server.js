@@ -121,19 +121,19 @@ app.post('/add', upload.single('imagename'), function(req, res, next) {
   var image = 'uploads/' + req.file.filename;
   var newImgObj = {url: image, user: "req.file"}
   var img = new Image(newImgObj)
-  img.save(function (err, respond){
+  img.save(function (err, dbImage){
     if(err)
         res.send("failed")
     else{
       var currentDay = new Date()
       var getFullDay = currentDay.getMonth()+1 + '-' + currentDay.getDate() + '-' + currentDay.getFullYear()
-      next('days/'+getFullDay)
-      console.log(getFullDay)
-      Day.findOneAndUpdate({day: getFullDay}, { $push: { images: img }}, function(err, res){
+      // next('days/  '+getFullDay)
+      
+      Day.findOneAndUpdate({day: getFullDay}, { $push: { images: dbImage }}, function(err, day){
         if (err){
-          console.log(err)
+         res.send(err)
         } else {
-          console.log('pushed')
+          res.send(dbImage)
         }
       })
     }
