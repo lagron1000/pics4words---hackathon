@@ -8,10 +8,10 @@ let DayApi = new daysApi();
 let WordApi = new wordApi()
 let dayRepository = new DaysRepository(DayApi, WordApi);
 let Renderer = new renderer();
-let EventsHandler = new eventsHandler(dayRepository, renderer);
+// let EventsHandler = new eventsHandler(dayRepository, renderer);
 
 
-EventsHandler.registerAddImage();
+// EventsHandler.registerAddImage();
 // eventsHandler.registerRemovePost();
 // eventsHandler.registerToggleComments();
 // eventsHandler.registerAddComment();
@@ -19,9 +19,6 @@ EventsHandler.registerAddImage();
 // eventsHandler.upPhoto();
 
 
-var currentDay = new Date()
-var getFullDay = currentDay.getMonth()+1 + '-' + currentDay.getDate() + '-' + currentDay.getFullYear()
-var getDay = dayRepository.initData(getFullDay);
-getDay.then( () => {
-    
+
+dayRepository.initData().then( () => {
     renderer.renderDay(postsRepository.posts)});

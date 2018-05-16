@@ -7,19 +7,25 @@ class DaysRepository {
         this.images = []
     }
     initData(){
-        return this.daysApi.fetchDay(date).then((data)=>{
-            if (data.word){
-            this.day = data.day;
-            this.word = data.word;
-            this.images = data.images
-            } else {
+        var currentDay = new Date()
+        var getFullDay = currentDay.getMonth()+1 + '-' + currentDay.getDate() + '-' + currentDay.getFullYear()
+        return this.daysApi.fetchDay(getFullDay).then((data1)=>{
+            if (!data1.word){
+                console.log('TESTTTTTTTTTTTTTTTTTTTT')
+                console.log(data1)
                 this.wordApi.fetch().then((data)=>{
+                    console.log(data)
                     var today = new Date;
                     var getFullDay = today.getMonth()+1 + '-' + today.getDate() + '-' + today.getFullYear()
-                    this.word = data.word
-                    this.day = today
+                    this.word = data[0].word
+                    this.day = getFullDay
                     this.addDay(this.day, this.word)
                 })
+            } else {
+                console.log(data1)
+                this.day = data.day;
+                this.word = data.word;
+                this.images = data.images
             }
         })
     }
