@@ -1,60 +1,114 @@
-.page-header{
-    font-family: "Droid Serif", "Helvetica Neue", sans-serif;
-    font-style: italic;
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 25px;
-    text-align: center;
+/* Fonts - 
+   Page & Image Titles - PT Serif,serif
+   Description & Links - PT Sans Caption,sans-serif
+   font-family: 'PT Serif', serif;
+   font-family: 'PT Sans Caption', sans-serif;
 
+   Old Font: font-family: "Droid Serif", "Helvetica Neue", sans-serif;
+*/
+
+
+main {
+   padding: 20px;
+}
+.page-header {
+   font-family: "Droid Serif", "Helvetica Neue", sans-serif;
+   font-style: italic;
+   font-size: 40px;
+   line-height: 40px;
+   margin-bottom: 25px;
+   text-align: center;
 }
 
-.calendar{
-    /* padding-left: 60%;  */
-    font-family: "Droid Serif", "Helvetica Neue", sans-serif;
-    font-style: italic;
-    font-size: 20px;
-    line-height: 25px;
-    margin-bottom: 25px;
-    margin-left:70%;
-    text-align: center;
-    background-color: beige;
-    width: 25%;
-    /* padding-right: 25%; */
+.calendar {
+   /* padding-left: 60%;  */
+   font-family: "Droid Serif", "Helvetica Neue", sans-serif;
+   font-style: italic;
+   font-size: 20px;
+   line-height: 25px;
+   margin-bottom: 25px;
+   margin-left: 70%;
+   text-align: center;
+   background-color: beige;
+   width: 25%;
+   /* padding-right: 25%; */
 }
 
-
-header {
+/* header {
     background-image: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/pathfinder-random-background-generator-4.jpg');
     background-repeat: none;
     background-position: center center;
     background-size: cover;
     text-align: center;
     color: white;
-  }
+  } */
 
-  .intro-text {
-    padding-top: 75px;
-    padding-bottom: 75px;
-    text-align: center;
-  }
-  
-  .intro-lead-in {
-    font-family: "Droid Serif", "Helvetica Neue", sans-serif;
-    font-style: italic;
-    font-size: 30px;
-    line-height: 40px;
-    margin-bottom: 25px;
-    text-align: center;
-    padding-top: 10px;
-  }
 
-         
-  .flex {
-    display:flex;flex-wrap: wrap;
-    padding: 20px;
-  }
+.header_description_ {
+   text-align: center;
+   margin-bottom: 0px;
+   /* border-bottom: 1px solid #a1a1a1; */
+   padding: 1.5rem 1rem;
+}
+.header_upload_ {
+   text-align: center;
+   margin-bottom: 0px;
+   /* border-bottom: 1px solid #a1a1a1; */
+   padding: 1.5rem 1rem;
+}
 
-  .imgloc {
-    width:33%;text-align:center;
-    padding: 2px;
+.intro-text {
+   padding-top: 75px;
+   padding-bottom: 75px;
+   text-align: center;
+}
+
+.intro-lead-in {
+   font-family: "Droid Serif", "Helvetica Neue", sans-serif;
+   font-style: italic;
+   font-size: 30px;
+   line-height: 40px;
+   margin-bottom: 25px;
+   text-align: center;
+   padding-top: 10px;
+}
+
+.flex {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 20px;
+}
+
+.photoUpload_ {
+   width: 300px;
+}
+
+/* .logo {
+   font-family: 'PT Sans Caption', sans-serif;
+   font-size: 3.5rem;
+   font-weight: 300;
+   line-height: 1.2;
+   padding-bottom: 2rem;
+} */
+
+.todaysWord {
+   font-family: 'PT Serif', serif;
+   font-size: 2.5rem;
+   font-weight: 700;
+   padding-bottom: 1rem;
+}
+/** Unknown additional CSS for the image gallery columns
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
   }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+}
+**/
+
+.custom-file, .photoUpload_ {
+   text-align: left;
+}
