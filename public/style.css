@@ -44,18 +44,26 @@ main {
   } */
 
 
-.header_description_ {
+.headerDescription_ {
    text-align: center;
    margin-bottom: 0px;
    /* border-bottom: 1px solid #a1a1a1; */
    padding: 1.5rem 1rem;
 }
-.header_upload_ {
+.headerUpload_ {
    text-align: center;
    margin-bottom: 0px;
    /* border-bottom: 1px solid #a1a1a1; */
    padding: 1.5rem 1rem;
 }
+.pastDays_ {
+   padding-bottom: 20px;
+}
+   .pastday_ {
+      margin-right: 10px;
+      background-color: #b4b4b5;
+      border: 0;
+   }
 
 .intro-text {
    padding-top: 75px;
@@ -111,4 +119,37 @@ main {
 
 .custom-file, .photoUpload_ {
    text-align: left;
+}
+
+
+@media (min-width: 34em) {
+   .card-columns {
+       -webkit-column-count: 2;
+       -moz-column-count: 2;
+       column-count: 2;
+   }
+}
+
+@media (min-width: 48em) {
+   .card-columns {
+       -webkit-column-count: 3;
+       -moz-column-count: 3;
+       column-count: 3;
+   }
+}
+
+@media (min-width: 62em) {
+   .card-columns {
+       -webkit-column-count: 4;
+       -moz-column-count: 4;
+       column-count: 4;
+   }
+}
+
+@media (min-width: 75em) {
+   .card-columns {
+       -webkit-column-count: 5;
+       -moz-column-count: 5;
+       column-count: 5;
+   }
 }
