@@ -6,78 +6,36 @@
 
    Old Font: font-family: "Droid Serif", "Helvetica Neue", sans-serif;
 */
+
+/* Nav ------------------------------------------ */
+.navBar_ {
+   text-align: left;
+}
+.logo_ {
+   color: black;
+   display: block;
+   float: left;
+   padding: 0.3125rem 0rem;
+}
 .headerDayWord_ {
    font-family: 'PT Serif', serif;
    font-weight: 700;
    padding-bottom: 1rem;
 }
 
-main {
-   padding: 20px;
+.slogan_ {
+   float: left;
+   padding: 0.54rem 0rem 0.54rem 0.5rem;
 }
 
-
-
-.page-header {
-   font-family: "Droid Serif", "Helvetica Neue", sans-serif;
-   font-style: italic;
-   font-size: 40px;
-   line-height: 40px;
-   margin-bottom: 25px;
-   text-align: center;
-}
-
-.calendar {
-   /* padding-left: 60%;  */
-   font-family: "Droid Serif", "Helvetica Neue", sans-serif;
-   font-style: italic;
-   font-size: 20px;
-   line-height: 25px;
-   margin-bottom: 25px;
-   margin-left: 70%;
-   text-align: center;
-   background-color: beige;
-   width: 25%;
-   /* padding-right: 25%; */
-}
-
-/* header {
-    
-    background-image: url('uploads/flowers/98e8b6d1cecbe2aae5e0278f80159418.jpg')
-    background-repeat: none;
-    background-position: center center;
-    background-size: cover;
-    text-align: center;
-  } */
-.navBar_ {
-   text-align: left;
-   justify-content: initial;
-   background: rgba(0,0,0,0.3);
-   /* background: rgba(200, 54, 54, 0.5); */
-
-   
-}
-.slogan_{
-   text-align: left;
-   height: 60px;
-   border-bottom: 1px solid white;
-}
-.logo_ {
-   color: white;
-}
-.headerDescription_ {
-   text-align: center;
-   margin-bottom: 0px;
-   /* border-bottom: 1px solid #a1a1a1; */
-   padding: 1.5rem 1rem;
-}
+/* Header ------------------------------------------ */
 
 .headerUpload_ {
    text-align: center;
    margin-bottom: 0px;
-   /* border-bottom: 1px solid #a1a1a1; */
-   padding: 2.5rem 1rem 2.5rem 1rem;
+   padding: 3.5rem 1rem;
    background-image: url('uploads/flowers/98e8b6d1cecbe2aae5e0278f80159418.jpg');
+   box-shadow: inset 0 0 0 2000px rgba(54, 54, 54, 0.3);
    background-repeat: none;
    background-position: center center;
    background-size: cover;
@@ -85,20 +43,49 @@ main {
    color: white;
 }
 
-
-
 .headerUpload_ .container p {
    margin-bottom: 0.3rem;
+   font-size: 1.2rem;
+   letter-spacing: 0.1rem;
+   text-shadow: 1px 1px 2px black, 0 0 25px black;
+}
+
+.todaysWord {
+   font-family: 'PT Serif', serif;
+   font-size: 4.5rem;
+   font-weight: 700;
+   letter-spacing: 0.1rem;
+   /* margin: 1rem 0rem 1.5rem 0rem; */
+   padding: 0.15rem 0rem 0.2em 0rem;
+   text-shadow: 1px 1px 2px black, 0 0 25px black;
+}
+
+.photoUpload_ {
+   width: 250px;
+}
+
+.photoUpload_ {
+   text-align: center;
 }
 
 .uploadPicture_ {
    margin-bottom: 20px;
-   text-align: center;
+   text-align: left;
+   background-color: #ebebeb;
 }
 
-.uploadImage {
-   text-align: center;
+.uploadImageLabel_ {
+   text-align: left;
+   background-color: #ebebeb;
 }
+
+/* Main ------------------------------------------ */
+
+main {
+   padding: 20px;
+}
+
+/* Past Days -------------------- */
 
 .pastDays_ {
    padding-bottom: 20px;
@@ -111,65 +98,23 @@ main {
    border: 0;
 }
 
-.intro-text {
-   padding-top: 75px;
-   padding-bottom: 75px;
-   text-align: center;
+/* Card Columns -------------------- */
+
+.cardBody_ {
+   padding: 0.7rem;
 }
 
-.intro-lead-in {
-   font-family: "Droid Serif", "Helvetica Neue", sans-serif;
-   font-style: italic;
-   font-size: 30px;
-   line-height: 40px;
-   margin-bottom: 25px;
-   text-align: center;
-   padding-top: 10px;
-}
-
-.flex {
-   display: flex;
-   flex-wrap: wrap;
-   padding: 20px;
-}
-
-.photoUpload_ {
-   width: 300px;
-}
-
-/* .logo {
-   font-family: 'PT Sans Caption', sans-serif;
-   font-size: 3.5rem;
-   font-weight: 300;
+.cardTitle_ {
+   font-family: inherit;
+   font-size: 1.15rem;
+   font-weight: 500;
    line-height: 1.2;
-   padding-bottom: 2rem;
-} */
-
-.todaysWord {
-   font-family: 'PT Serif', serif;
-   font-size: 3rem;
-   font-weight: 700;
-   padding-bottom: 1rem;
+   color: inherit;
 }
 
-/** Unknown additional CSS for the image gallery columns
-
-.card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(xl) {
-    column-count: 5;
-  }
-}
-**/
-
-.photoUpload_ {
-   text-align: center;
-}
-
-.uploadImageLabel_ {
-   text-align: left;
+.rateBtn_ {
+   display: block;
+   float: right;
 }
 
 @media (min-width: 34em) {

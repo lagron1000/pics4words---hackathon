@@ -4,6 +4,7 @@
 <head>
    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
    <link href="style.css" rel="stylesheet">
+   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|PT+Serif:400,700" rel="stylesheet">
    <meta charset="UTF-8">
    <title>Pics4words</title>
@@ -12,62 +13,53 @@
 
 <body>
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Pics4words</a>
+   <nav class="navbar navBar_">
+      <div>
+         <div></div>
+         <a class="navbar-brand logo_" href="#">Pics4words</a>
+         <span class="slogan_">
+               <span>Sumbit your </span>
+               <span class="headerDayWord_"></span>
+               <span>picture</span>
+         </span>
+         
+      </div>
+
+      <div>
+
+      </div>
+      <!-- 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
          aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav mr-auto">
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
 
-            <li class="nav-item">
-               <span>Sumbit your </span>
-               <span class="headerDayWord_"></span>
-               <span>picture</span>
-            </li>
-         </ul>
-      </div>
+               <li class="nav-item">
+
+               </li>
+            </ul>
+         </div> -->
    </nav>
-
-   <!-- <div class="jumbotron jumbotron-fluid headerDescription_">
-         <div class="container">
-            <h1 class="display-4">Pics4words</h1>
-            <p class="lead">Upload your photo inspired by the daily word</p>
-         </div>
-      </div> -->
 
 
    <header>
       <div class="jumbotron jumbotron-fluid headerUpload_">
-         <!-- <div>
-            <div class="slogan_">
-               <a class="navbar-brand logo_" href="#">Pics4words</a>
-               <span>Sumbit your </span>
-               <span class="headerDayWord_">flower </span>
-               <span>picture</span>
-            </div>
-         </div> -->
-
          <div class="container headerUploadContainer_">
             <p>Daily Word</p>
             <h1 class="todaysWord" id="data-num">
                <span class="WOTD"></span>
             </h1>
-            <!-- <form class="uploadImage1" enctype="multipart/form-data" action="/add" method="POST">
-                                        
-                <input class='myFile' type="file" name="imagename" id="imagename">
-                <button   id="butsubmit" type="button"  >new But</button>
-            </form> -->
             <form class="uploadImage1" enctype="multipart/form-data" action="/add" method="POST">
                <div class="custom-file photoUpload_">
                   <input type="file" class="myFile custom-file-input uploadPicture_" id="imagename" name="imagename">
-                  <label class="custom-file-label uploadImageLabel_" for="customFile">Upload flower picture</label>
+                  <label class="custom-file-label uploadImageLabel_" for="customFile">Upload picture</label>
+                  <input type="text" class="form-control uploadPicture_" id="userName" placeholder="Username">
                   <button id="butsubmit" type="button" class="btn btn-primary">Submit</button>
                </div>
             </form>
-
          </div>
       </div>
    </header>
@@ -94,223 +86,39 @@
          </button>
       </div>
 
-
-      <div class="currentDay card-columns">
-   
-         <!-- <div class="card">
-            <img class="card-img" src="uploads/flowers/2534db1c81d2961b5c0819f2cc8c70d9.jpg" alt="Card image">
-         </div>
-         <div class="card">
-            <img class="card-img" src="uploads/flowers/2fee5fe4861236e8e5516c20b1da7da3.jpg" alt="Card image">
-         </div>
-         <div class="card">
-            <img class="card-img" src="uploads/flowers/31f090cbf954cba2ebe2a1830350fadb.jpg" alt="Card image">
-         </div>
-         <div class="card">
-            <img class="card-img" src="uploads/flowers/403b6204fad518031a2f16c70a409927.jpg" alt="Card image">
-         </div>
-         <div class="card">
-            <img class="card-img" src="uploads/flowers/64b5d7cb48d77923ff03df41f6e604e6.jpg" alt="Card image">
-         </div>
-
-         <div class="card">
-            <img class="card-img" src="uploads/flowers/1264da4a3f18207dc22592102abae40d.jpg" alt="Card image">
-         </div>
-
-         <div class="card">
-            <img class="card-img" src="uploads/flowers/00b7d8a57b28a36a855d89e6dd32f578.jpg" alt="Card image"> -->
-         </div>
-
-         <!-- Cards with texts
-            <div class="card">
-            <img class="card-img-top" src="uploads/flowers/1264da4a3f18207dc22592102abae40d.jpg" alt="Card image cap">
-            <div class="card-body">
-               <h5 class="card-title">Card title that wraps to a new line</h5>
-                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content
-                        is a little bit longer.</p>
-            </div>
-         </div>
-
-         <div class="card">
-            <img class="card-img-top" src="uploads/flowers/00b7d8a57b28a36a855d89e6dd32f578.jpg" alt="Card image cap">
-            <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                  <p class="card-text">
-                     <small class="text-muted">Last updated 3 mins ago</small>
-                  </p>
-            </div>
-         </div>
-
-         <div class="card p-3 text-right">
-            <blockquote class="blockquote mb-0">
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-               <footer class="blockquote-footer">
-                  <small class="text-muted">
-                     Someone famous in
-                     <cite title="Source Title">Source Title</cite>
-                  </small>
-               </footer>
-            </blockquote>
-         </div>
-
-         <div class="card">
-            <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has
-                  even longer content than the first to show that equal height action.</p>
-               <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-               </p>
-            </div>
-         </div>
-
-         <div class="card p-3">
-            <blockquote class="blockquote mb-0 card-body">
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-               <footer class="blockquote-footer">
-                  <small class="text-muted">
-                     Someone famous in
-                     <cite title="Source Title">Source Title</cite>
-                  </small>
-               </footer>
-            </blockquote>
-         </div>
-         <div class="card bg-primary text-white text-center p-3">
-            <blockquote class="blockquote mb-0">
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-               <footer class="blockquote-footer">
-                  <small>
-                     Someone famous in
-                     <cite title="Source Title">Source Title</cite>
-                  </small>
-               </footer>
-            </blockquote>
-         </div>
-
-         <div class="card text-center">
-            <div class="card-body">
-               <h5 class="card-title">Card title</h5>
-               <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-               <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-               </p>
-            </div>
-         </div> -->
-
+      <div class="currentDay card-columns"></div>
       </div>
    </main>
 
-   <!-- <footer>
-      <div class="container">
-         <div class="row">
 
-            <div class="page-header">
-               <div class="intro-text"> -->
-                  <!-- <div class="intro-lead-in" style="color:red">It's Nice To Meet You</div> -->
-                  <!-- <div class="intro-lead-in">Daily Random Word</div>
-                  <div class="todaysword" id="data-num">Spaghetti</div>
-                  <div class="calendar">
-                     <div class="cal-search" style="color:dimgray;">Look for previous words by clicking the date you choose </div>
-                     <input type="date" />
-                     <button type="btn btn-primary">Search</button>
-                  </div> -->
-                  <!-- <div class="formFile"></div>
-                  <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
-                     <input type="file" name="imagename" id="imagename">
-                     <input type="submit" name="submit" value="submit">
-                  </form> -->
-               <!-- </div> -->
-            <!-- </div>
-         </div>
-      </div>
-   </footer> -->
-
-
-<!-- </body> -->
-
-
-<!-- 
-</nav>
-<header>
-   <div class="container">
-      <div class="row">
-         <div class="page-header">
-            <div class="intro-text">
-               <div class="intro-lead-in" style="color:red">It's Nice To Meet You</div>
-               <div class="intro-lead-in">Our today's Random Word is:</div>
-               <div class="todaysword" id="data-num">'Random Word'</div>
-               <div class="calendar">
-                  <div class="cal-search" style="color:dimgray;">Look for previous words by clicking the date you choose </div>
-                  <input type="date" />
-                  <button type="btn btn-primary">Search</button>
-               </div>
-               <div class="formFile"></div>
-               <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
-
-        </nav>
-        <header>
-                <div class="container">
-                    <div class="row">
-                        <div class="page-header">
-                                <div class="intro-text">
-                                    <div class="intro-lead-in" style="color:red">It's Nice To Meet You</div>
-                                    <div class="intro-lead-in">Our today's Random Word is:</div>
-                                    <div class="todaysword" id="data-num">'Random Word'</div>
-                                    <div class="calendar">
-                                        <div class="cal-search" style="color:dimgray;">Look for previous words by clicking the date you choose </div>   
-                                        <input type="date" />
-                                        <button type="btn btn-primary">Search</button>
-                                    </div>
-                                    <div class="formFile"></div>
-                                   
-                                </div>
-                        </div>    
-                    </div>
-                </div>  
-                <div class="today flex">
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                </div>
-
-
-                  <input class='myFile' type="file" name="imagename" id="imagename">
-                  <input type="submit" name="submit" value="submit">
-               </form>
+   <script id="day-template" type="text/x-handlebars-template">
+      <div class="card" data-id="{{_id}}">
+         <img class="card-img" src="{{url}}" alt="Card image">
+         <div class="card-body cardBody_">
+            <span class="card-title cardTitle_">Username</span>
+            <div class="rateBtn_">
+               <span>70</span>
+               <a href="#">
+                  <i class="fa fa-thumbs-up"></i>
+               </a>
             </div>
          </div>
       </div>
-   </div>
 
- -->
-
-
-<!-- </header> -->
-<script id="day-template" type="text/x-handlebars-template">
-    <div class="card" data-id="{{_id}}">
-        <img class="card-img" src="{{url}}" alt="Card image">
-     </div>
    </script>
 
-<script id="word-template" type="text/x-handlebars-template">
-    <h1>{{word}}</h1>
+   <script id="word-template" type="text/x-handlebars-template">
+      <h1 class="todaysWord">{{word}}</h1>
    </script>
 
    <script id="header-template" type="text/x-handlebars-template">
-    <span>{{word}}</span>
+      <span>{{word}}</span>
    </script>
 
-<script src="jquery/dist/jquery.js"></script>
-<script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
-<script src="handlebars/dist/handlebars.js"></script>
-<script src="main.js" type="module"></script>
+   <script src="jquery/dist/jquery.js"></script>
+   <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
+   <script src="handlebars/dist/handlebars.js"></script>
+   <script src="main.js" type="module"></script>
 </body>
 
 </html>
