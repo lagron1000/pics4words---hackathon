@@ -1,14 +1,18 @@
 class eventsHandler {
     constructor (daysRepository,renderer){
-        this.daysReplository = daysRepository;
+        this.daysRepository = daysRepository;
         this.renderer = renderer;
-        this.$day = $('.day');
+        this.$day = $("/");
     }
         registerAddImage(){
-            $('.uploadImage').submit(function(e){
+            $('.uploadImage').submit( (e) =>{
                 e.preventDefault();
-                this.daysRepository.uploadImage('.day')
+                
+                this.daysRepository.addImage(this.$day)
+
             });
+                
+            
         }
     }
 

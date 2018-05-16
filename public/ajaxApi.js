@@ -12,9 +12,9 @@ class daysApi{
         })
     }
     uploadPhoto(form){
-
+        
         return $(form).ajaxSubmit({
-            data: {title: form.title},
+            data: {title: "photo"},
             contentType: 'application/json',
             
             success: function(response){
@@ -42,7 +42,15 @@ class daysApi{
             console.log(data)
         })
     }
-
+    postDay(content){
+        return $.ajax({
+            method: "POST",
+            url: "/days",
+            data: content
+        }).catch(function(data){
+            console.log(data)
+        })
+    }
     }
 
 
