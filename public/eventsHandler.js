@@ -7,7 +7,7 @@ class eventsHandler {
         registerAddImage(){
             $('#butsubmit').click( (e) =>{
                 this.daysRepository.addImage(e).then( () => {
-                    this.renderer.renderDay(this.daysRepository.images)
+                    this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
                 })
                     
              })

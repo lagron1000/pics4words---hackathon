@@ -24,7 +24,7 @@
 
             <li class="nav-item">
                <span>Sumbit your </span>
-               <span class="headerDayWord_">flower </span>
+               <span class="headerDayWord_"></span>
                <span>picture</span>
             </li>
          </ul>
@@ -53,13 +53,18 @@
          <div class="container headerUploadContainer_">
             <p>Daily Word</p>
             <h1 class="todaysWord" id="data-num">
-               <span>Flower</span>
+               <span class="WOTD"></span>
             </h1>
-            <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
+            <!-- <form class="uploadImage1" enctype="multipart/form-data" action="/add" method="POST">
+                                        
+                <input class='myFile' type="file" name="imagename" id="imagename">
+                <button   id="butsubmit" type="button"  >new But</button>
+            </form> -->
+            <form class="uploadImage1" enctype="multipart/form-data" action="/add" method="POST">
                <div class="custom-file photoUpload_">
-                  <input type="file" class="custom-file-input uploadPicture_" id="imagename" name="imagename">
+                  <input type="file" class="myFile custom-file-input uploadPicture_" id="imagename" name="imagename">
                   <label class="custom-file-label uploadImageLabel_" for="customFile">Upload flower picture</label>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button id="butsubmit" type="button" class="btn btn-primary">Submit</button>
                </div>
             </form>
 
@@ -90,11 +95,9 @@
       </div>
 
 
-      <div class="card-columns">
-         <div class="card">
-            <img class="card-img" src="uploads/flowers/09fbc6792e4275e06162de223da5e195.jpg" alt="Card image">
-         </div>
-         <div class="card">
+      <div class="currentDay card-columns">
+   
+         <!-- <div class="card">
             <img class="card-img" src="uploads/flowers/2534db1c81d2961b5c0819f2cc8c70d9.jpg" alt="Card image">
          </div>
          <div class="card">
@@ -115,7 +118,7 @@
          </div>
 
          <div class="card">
-            <img class="card-img" src="uploads/flowers/00b7d8a57b28a36a855d89e6dd32f578.jpg" alt="Card image">
+            <img class="card-img" src="uploads/flowers/00b7d8a57b28a36a855d89e6dd32f578.jpg" alt="Card image"> -->
          </div>
 
          <!-- Cards with texts
@@ -198,44 +201,36 @@
       </div>
    </main>
 
-   <footer>
+   <!-- <footer>
       <div class="container">
          <div class="row">
 
             <div class="page-header">
-               <div class="intro-text">
+               <div class="intro-text"> -->
                   <!-- <div class="intro-lead-in" style="color:red">It's Nice To Meet You</div> -->
-                  <div class="intro-lead-in">Daily Random Word</div>
+                  <!-- <div class="intro-lead-in">Daily Random Word</div>
                   <div class="todaysword" id="data-num">Spaghetti</div>
                   <div class="calendar">
                      <div class="cal-search" style="color:dimgray;">Look for previous words by clicking the date you choose </div>
                      <input type="date" />
                      <button type="btn btn-primary">Search</button>
-                  </div>
+                  </div> -->
                   <!-- <div class="formFile"></div>
                   <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
                      <input type="file" name="imagename" id="imagename">
                      <input type="submit" name="submit" value="submit">
                   </form> -->
                <!-- </div> -->
-            </div>
+            <!-- </div>
          </div>
       </div>
-   </footer>
-
-   <script id="day-template" type="text/x-handlebars-template">
-      <div class="imgloc" data-id="{{_id}}">
-         <img src="{{url}}">
-      </div>
-   </script>
-   <script src="jquery/dist/jquery.js"></script>
-   <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
-   <script src="handlebars/dist/handlebars.js"></script>
-   <script src="main.js" type="module"></script>
-</body>
+   </footer> -->
 
 
+<!-- </body> -->
 
+
+<!-- 
 </nav>
 <header>
    <div class="container">
@@ -268,11 +263,7 @@
                                         <button type="btn btn-primary">Search</button>
                                     </div>
                                     <div class="formFile"></div>
-                                    <form class="uploadImage1" enctype="multipart/form-data" action="/add" method="POST">
-                                        
-                                        <input class='myFile' type="file" name="imagename" id="imagename">
-                                        <button   id="butsubmit" type="button"  >new But</button>
-                                    </form>
+                                   
                                 </div>
                         </div>    
                     </div>
@@ -298,15 +289,24 @@
       </div>
    </div>
 
+ -->
 
 
-
-</header>
+<!-- </header> -->
 <script id="day-template" type="text/x-handlebars-template">
-   <div class="imgloc" data-id="{{_id}}">
-      <img src="{{url}}">
-   </div>
-</script>
+    <div class="card" data-id="{{_id}}">
+        <img class="card-img" src="{{url}}" alt="Card image">
+     </div>
+   </script>
+
+<script id="word-template" type="text/x-handlebars-template">
+    <h1>{{word}}</h1>
+   </script>
+
+   <script id="header-template" type="text/x-handlebars-template">
+    <span>{{word}}</span>
+   </script>
+
 <script src="jquery/dist/jquery.js"></script>
 <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
 <script src="handlebars/dist/handlebars.js"></script>

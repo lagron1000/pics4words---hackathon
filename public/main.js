@@ -21,4 +21,4 @@ EventsHandler.registerAddImage();
 
 
 dayRepository.initData().then( () => {
-    Renderer.renderDay(dayRepository.images)});
+    Renderer.renderDay(dayRepository.images, dayRepository)});
