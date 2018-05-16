@@ -8,7 +8,7 @@ let DayApi = new daysApi();
 let WordApi = new wordApi()
 let dayRepository = new DaysRepository(DayApi, WordApi);
 let Renderer = new renderer();
-// let EventsHandler = new eventsHandler(dayRepository, renderer);
+let EventsHandler = new eventsHandler(dayRepository, renderer);
 
 
 // EventsHandler.registerAddImage();
@@ -21,4 +21,4 @@ let Renderer = new renderer();
 
 
 dayRepository.initData().then( () => {
-    renderer.renderDay(postsRepository.posts)});
+    Renderer.renderDay(dayRepository.images)});
