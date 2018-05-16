@@ -11,21 +11,21 @@ class daysApi{
             console.log(data)
         })
     }
-    uploadPhoto(form){
+    // uploadPhoto(form){
         
-        return $(form).ajaxSubmit({
-            data: {title: "photo"},
-            contentType: 'application/json',
+    //     return $(form).ajaxSubmit({
+    //         data: {title: "photo"},
+    //         contentType: 'application/json',
             
-            success: function(response){
-              console.log('image uploaded and form submitted');     
-            },
-            error:function(res, err){
-                console.error(err);
-            }
-        });
-          return false;
-    }
+    //         success: function(response){
+    //           console.log('image uploaded and form submitted');     
+    //         },
+    //         error:function(res, err){
+    //             console.error(err);
+    //         }
+    //     });
+    //       return false;
+    // }
     fetchDay(date){
         return $.ajax({
             method: "GET",

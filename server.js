@@ -58,7 +58,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
                         
         var date = req.params.date;
         Day.find({day : date}, function (req, day){
-           res.send(day);
+        }).populate('images').exec(function(err, day){
+          if (err){
+            console.log(err)
+          } else {
+            res.send(day);
+            console.log(day)
+          }
         })
     })
 
@@ -112,7 +118,7 @@ var upload = multer({storage: storage});
 
 app.post('/add', upload.single('imagename'), function(req, res, next) {
   console.log("updating photo ////")
-  var image = req.file.filename;
+  var image = 'uploads/' + req.file.filename;
   var newImgObj = {url: image, user: "req.file"}
   var img = new Image(newImgObj)
   img.save(function (err, respond){
@@ -121,11 +127,17 @@ app.post('/add', upload.single('imagename'), function(req, res, next) {
     else{
       var currentDay = new Date()
       var getFullDay = currentDay.getMonth()+1 + '-' + currentDay.getDate() + '-' + currentDay.getFullYear()
-      res.send("Saved")
-      Day.findOneAndUpdate({date: getFullDay}, { $push: { images: img }})
+      next('days/'+getFullDay)
+      console.log(getFullDay)
+      Day.findOneAndUpdate({day: getFullDay}, { $push: { images: img }}, function(err, res){
+        if (err){
+          console.log(err)
+        } else {
+          console.log('pushed')
+        }
+      })
     }
   })
- /** rest */ 
 });
 
 
