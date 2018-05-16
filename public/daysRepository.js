@@ -34,14 +34,12 @@ class DaysRepository {
         return this.daysApi.postDay(dayObj)
     }
 
-    // addImage(form){
-        
-        
-    //     this.daysApi.uploadPhoto(form);
-    //     // newPhoto.then( (data) => {
-    //     //     this.images.push(data)
-    //     // })
-    // }
+    addImage(e){      
+        return this.daysApi.uploadPhoto(e).then( (data) => {
+            console.log(data)
+            this.images.push(data)
+        })
+    }
         
     findDate(date){
         return this.daysApi.fetchDay(date).then((data)=>{
