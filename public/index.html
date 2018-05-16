@@ -11,17 +11,6 @@
 </head>
 
 <body>
-   <!-- <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-left">
-               <li>
-                  <a href="#">About us</a>
-               </li>
-            </ul>
-         </div>
-      </div>
-   </nav> -->
 
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">Pics4words</a>
@@ -32,92 +21,72 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
          <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item active">
-               <a class="nav-link" href="#">Home
-                  <span class="sr-only">(current)</span>
-               </a>
-            </li>
+
             <li class="nav-item">
-               <a class="nav-link" href="#">Link</a>
-            </li> -->
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">
-                  <span>Today</span>
-               </a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-               </div>
+               <span>Sumbit your </span>
+               <span class="headerDayWord_">flower </span>
+               <span>picture</span>
             </li>
-            <!-- <li class="nav-item">
-               <a class="nav-link disabled" href="#">Disabled</a>
-            </li> -->
          </ul>
-         <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-         </form> -->
       </div>
    </nav>
 
-   <header>
-      <div class="jumbotron jumbotron-fluid header_description_">
+   <!-- <div class="jumbotron jumbotron-fluid headerDescription_">
          <div class="container">
             <h1 class="display-4">Pics4words</h1>
-            <!-- <p class="lead">Upload your photo in reference to the daily word</p> -->
             <p class="lead">Upload your photo inspired by the daily word</p>
-            <!-- <p class="lead">Get a daily word & upload your picture</p> -->
          </div>
-      </div>
+      </div> -->
 
-      <div class="jumbotron jumbotron-fluid header_upload_">
-         <div class="container">
-            <p>
-               <span>Daily Word</span>
-               <!-- <span>- 17.05</span> -->
-            </p>
+
+   <header>
+      <div class="jumbotron jumbotron-fluid headerUpload_">
+         <!-- <div>
+            <div class="slogan_">
+               <a class="navbar-brand logo_" href="#">Pics4words</a>
+               <span>Sumbit your </span>
+               <span class="headerDayWord_">flower </span>
+               <span>picture</span>
+            </div>
+         </div> -->
+
+         <div class="container headerUploadContainer_">
+            <p>Daily Word</p>
             <h1 class="todaysWord" id="data-num">
-
                <span>Flower</span>
             </h1>
-
-            <!-- <label class="custom-file">
-            <input type="file" id="file" class="custom-file-input">
-            <span class="custom-file-control"></span>
-         </label> -->
-
-            <div class="custom-file photoUpload_">
-               <input type="file" class="custom-file-input" id="imagename" name="imagename">
-               <label class="custom-file-label" for="customFile">Choose file</label>
-            </div>
+            <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
+               <div class="custom-file photoUpload_">
+                  <input type="file" class="custom-file-input uploadPicture_" id="imagename" name="imagename">
+                  <label class="custom-file-label uploadImageLabel_" for="customFile">Upload flower picture</label>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+               </div>
+            </form>
 
          </div>
       </div>
    </header>
 
    <main>
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-         <div class="btn-group mr-2" role="group" aria-label="First group">
-            <button type="button" class="btn btn-secondary">
-               <span>16.05</span>
-               <span>Baby</span>
-            </button>
-         </div>
-         <div class="btn-group mr-2" role="group" aria-label="Second group">
-            <button type="button" class="btn btn-secondary">
-               <span>16.05</span>
-               <span>Vacation</span>
-            </button>
-         </div>
-         <div class="btn-group" role="group" aria-label="Third group">
-            <button type="button" class="btn btn-secondary">
-               <span>16.05</span>
-               <span>Sand</span>
-            </button>
-         </div>
+      <div class="btn-toolbar pastDays_" role="toolbar" aria-label="Toolbar with button groups">
+         <!-- <div class="btn-group mr-2" role="group" aria-label="First group"></div> -->
+         <button class="btn btn-primary pastday_" type="button">
+            <span>16.05</span>
+            <span> - </span>
+            <span>Flowers</span>
+         </button>
+
+         <button class="btn btn-primary pastday_" type="button">
+            <span>15.05</span>
+            <span> - </span>
+            <span>Vacation</span>
+         </button>
+
+         <button class="btn btn-primary pastday_" type="button">
+            <span>14.05</span>
+            <span> - </span>
+            <span>Mother</span>
+         </button>
       </div>
 
 
@@ -253,17 +222,36 @@
          </div>
       </div>
    </footer>
-     
-     <script id="day-template" type="text/x-handlebars-template">
-    <div class="imgloc" data-id="{{_id}}"><img src="{{url}}">
-    </div>
-</script>
+
+   <script id="day-template" type="text/x-handlebars-template">
+      <div class="imgloc" data-id="{{_id}}">
+         <img src="{{url}}">
+      </div>
+   </script>
    <script src="jquery/dist/jquery.js"></script>
    <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
    <script src="handlebars/dist/handlebars.js"></script>
    <script src="main.js" type="module"></script>
 </body>
 
+
+
+</nav>
+<header>
+   <div class="container">
+      <div class="row">
+         <div class="page-header">
+            <div class="intro-text">
+               <div class="intro-lead-in" style="color:red">It's Nice To Meet You</div>
+               <div class="intro-lead-in">Our today's Random Word is:</div>
+               <div class="todaysword" id="data-num">'Random Word'</div>
+               <div class="calendar">
+                  <div class="cal-search" style="color:dimgray;">Look for previous words by clicking the date you choose </div>
+                  <input type="date" />
+                  <button type="btn btn-primary">Search</button>
+               </div>
+               <div class="formFile"></div>
+               <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
 
         </nav>
         <header>
@@ -302,17 +290,27 @@
                 </div>
 
 
+                  <input class='myFile' type="file" name="imagename" id="imagename">
+                  <input type="submit" name="submit" value="submit">
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
 
 
 
 </header>
 <script id="day-template" type="text/x-handlebars-template">
-    <div class="imgloc" data-id="{{_id}}"><img src="{{url}}">
-    </div>
+   <div class="imgloc" data-id="{{_id}}">
+      <img src="{{url}}">
+   </div>
 </script>
-    <script src="jquery/dist/jquery.js"></script>
-    <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
-    <script src="handlebars/dist/handlebars.js"></script>
-    <script src="main.js" type="module"></script>
-  </body>
+<script src="jquery/dist/jquery.js"></script>
+<script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
+<script src="handlebars/dist/handlebars.js"></script>
+<script src="main.js" type="module"></script>
+</body>
+
 </html>
