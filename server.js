@@ -15,11 +15,11 @@ mongoose.connect('mongodb://localhost/pics4wordsDB', function() {
 })
 
 // Requirements to Models 
-var Day = require('./models/dayModel');
 var Comment = require('./models/commentModel');
-var Image = require('./models/commentModel');
+var Image = require('./models/imageModel');
+var Day = require('./models/dayModel');
 
- 
+
 
 var app = express();
 app.use(express.static('public'));
@@ -54,7 +54,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //2) to handle getting a specific Date
 
-    app.get('/days:date',function (req, res){
+    app.get('/days/:date',function (req, res){
                         
         var date = req.params.date;
         Day.find({day : date}, function (req, day){
@@ -66,7 +66,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //3) to handle deleting an Image
 
-     app.delete('/delete/:day/images:id', function (req,res){
+     app.delete('/days/:date/images:id', function (req,res){
     
         var id = req.params.id;
             
@@ -85,68 +85,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
         })
   })   
 
-     
-
-
-
-// 2) to handle adding a post
-
-//   app.post('/posts',function (req,res){
-
-//       var newPost = new Post(req.body)
-      
-//       newPost.save(function (err, respond){
-//         if(err)
-//             res.send("failed")
-//         else{
-//           res.send({id: respond.id, text:"Saved"})
-//         }
-//       })
-
-//   })
-
-
-
-// 4) to handle adding a comment to a post
-
-    // app.post("/posts/:id/comments", function (req, res){
-    //   id = req.params.id;
-    //   newComment = {text: req.body.text, user: req.body.user}
-    //   Post.findByIdAndUpdate(id, {
-    //     $push: { comments: newComment }
-    //   }, { 'new': true}, function (err, res1){
-    //           if(err)
-    //             res.send("failed")
-    //           else {  
-    //             var comId = res1.comments[res1.comments.length-1]._id
-    //             res.send({id: comId, text:"Updated"}) 
-                
-    //           }})
-
-    //   });
-
-
-
-     
-
-    
-
-  
-// 5) to handle deleting a comment from a post
-
-        // app.delete("/posts/del-comment/:id/:idC", function (req, res){
-           
-        //     id = req.params.id;
-        //     idC = req.params.idC;
-            
-        //     Post.update({ _id: id},{$pull: { comments : {_id : idC} } },function (err, res1) {
-        //     if(err)
-        //       res.send("failed")
-        //     else    
-        //       res.send("Deleted")
-        //     })
-        // });
-
+  //handle posting day
+  app.post('/days', function(req, res){
+    console.log(req.body)
+    var newDay = new Day(req.body)
+    newDay.save(function(err, result){
+      if (err){
+        console.log(err)
+      } else {
+        res.send(newDay)
+      }
+    })
+  })
 
 //Function used to configure the middleware storage
 var storage = multer.diskStorage({
@@ -162,16 +112,17 @@ var upload = multer({storage: storage});
 
 app.post('/add', upload.single('imagename'), function(req, res, next) {
   console.log("updating photo ////")
-  
   var image = req.file.filename;
-  var img = new Image()
-  img.url = image;
-  img.user = req.title // ???
+  var newImgObj = {url: image, user: "req.file"}
+  var img = new Image(newImgObj)
   img.save(function (err, respond){
     if(err)
         res.send("failed")
     else{
+      var currentDay = new Date()
+      var getFullDay = currentDay.getMonth()+1 + '-' + currentDay.getDate() + '-' + currentDay.getFullYear()
       res.send("Saved")
+      Day.findOneAndUpdate({date: getFullDay}, { $push: { images: img }})
     }
   })
  /** rest */ 

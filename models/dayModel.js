@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 
 
 let daySchema = new Schema({
-    day: Date,
+    day: String,
     word: String,
     images: [{type: Schema.Types.ObjectId, ref: 'image'}]
     

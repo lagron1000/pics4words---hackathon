@@ -10,7 +10,7 @@ let imageSchema = new Schema({
     url: String,
     user: String,
     rating: Number,
-    comments: [{type: commentModel.Schema.Types.ObjectId, ref: 'comment'}]
+    comments: [{type: Schema.Types.ObjectId, ref: 'comment'}]
     
 
 });
