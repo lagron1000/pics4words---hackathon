@@ -212,12 +212,12 @@
                      <input type="date" />
                      <button type="btn btn-primary">Search</button>
                   </div>
-                  <div class="formFile"></div>
+                  <!-- <div class="formFile"></div>
                   <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
                      <input type="file" name="imagename" id="imagename">
                      <input type="submit" name="submit" value="submit">
-                  </form>
-               </div>
+                  </form> -->
+               <!-- </div> -->
             </div>
          </div>
       </div>
@@ -233,6 +233,7 @@
    <script src="handlebars/dist/handlebars.js"></script>
    <script src="main.js" type="module"></script>
 </body>
+
 
 
 </nav>
@@ -251,6 +252,43 @@
                </div>
                <div class="formFile"></div>
                <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
+
+        </nav>
+        <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="page-header">
+                                <div class="intro-text">
+                                    <div class="intro-lead-in" style="color:red">It's Nice To Meet You</div>
+                                    <div class="intro-lead-in">Our today's Random Word is:</div>
+                                    <div class="todaysword" id="data-num">'Random Word'</div>
+                                    <div class="calendar">
+                                        <div class="cal-search" style="color:dimgray;">Look for previous words by clicking the date you choose </div>   
+                                        <input type="date" />
+                                        <button type="btn btn-primary">Search</button>
+                                    </div>
+                                    <div class="formFile"></div>
+                                    <form class="uploadImage1" enctype="multipart/form-data" action="/add" method="POST">
+                                        
+                                        <input class='myFile' type="file" name="imagename" id="imagename">
+                                        <button   id="butsubmit" type="button"  >new But</button>
+                                    </form>
+                                </div>
+                        </div>    
+                    </div>
+                </div>  
+                <div class="today flex">
+                    <div class="imgloc">Div</div>
+                    <div class="imgloc">Div</div>
+                    <div class="imgloc">Div</div>
+                    <div class="imgloc">Div</div>
+                    <div class="imgloc">Div</div>
+                    <div class="imgloc">Div</div>
+                    <div class="imgloc">Div</div>
+                    <div class="imgloc">Div</div>
+                    <div class="imgloc">Div</div>
+                </div>
+
 
                   <input class='myFile' type="file" name="imagename" id="imagename">
                   <input type="submit" name="submit" value="submit">

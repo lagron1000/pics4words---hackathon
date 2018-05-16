@@ -8,10 +8,10 @@ let DayApi = new daysApi();
 let WordApi = new wordApi()
 let dayRepository = new DaysRepository(DayApi, WordApi);
 let Renderer = new renderer();
-let EventsHandler = new eventsHandler(dayRepository, renderer);
+let EventsHandler = new eventsHandler(dayRepository, Renderer);
 
 
-// EventsHandler.registerAddImage();
+EventsHandler.registerAddImage();
 // eventsHandler.registerRemovePost();
 // eventsHandler.registerToggleComments();
 // eventsHandler.registerAddComment();
