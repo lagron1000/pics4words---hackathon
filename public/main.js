@@ -11,7 +11,7 @@ let Renderer = new renderer();
 let EventsHandler = new eventsHandler(dayRepository, renderer);
 
 
-EventsHandler.registerAddImage();
+// EventsHandler.registerAddImage();
 // eventsHandler.registerRemovePost();
 // eventsHandler.registerToggleComments();
 // eventsHandler.registerAddComment();
@@ -19,9 +19,6 @@ EventsHandler.registerAddImage();
 // eventsHandler.upPhoto();
 
 
-var currentDay = new Date()
-var getFullDay = currentDay.getMonth()+1 + '-' + currentDay.getDate() + '-' + currentDay.getFullYear()
-var getDay = dayRepository.initData(getFullDay);
-getDay.then( () => {
-    
-    renderer.renderDay(postsRepository.posts)});
+
+dayRepository.initData().then( () => {
+    Renderer.renderDay(dayRepository.images)});
