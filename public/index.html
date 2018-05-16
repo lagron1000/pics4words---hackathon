@@ -1,65 +1,164 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <title>Pics4words</title>
 
-  </head>
-  <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li><a href="#">About us</a></li>
-                    </ul>
-                </div>
+<head>
+   <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+   <link href="style.css" rel="stylesheet">
+   <meta charset="UTF-8">
+   <title>Pics4words</title>
+
+</head>
+
+<body>
+   <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+               <li>
+                  <a href="#">About us</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+
+   <header>
+      <div class="jumbotron">
+         <h1 class="display-4">Pics4words</h1>
+         <p class="lead">Upload your images related to the daily random word</p>
+         <hr class="my-4">
+         <p>Today's word</p>
+         <div class="todaysword" id="data-num">Spaghetti</div>
+         <label class="custom-file">
+            <input type="file" id="file" class="custom-file-input">
+            <span class="custom-file-control"></span>
+         </label>
+
+         <div class="custom-file">
+            <input type="file" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+         </div>
+         
+      </div>
+
+      <div class="card-columns">
+         <div class="card">
+            <img class="card-img-top" src=".../100px160/" alt="Card image cap">
+            <div class="card-body">
+               <h5 class="card-title">Card title that wraps to a new line</h5>
+               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content
+                  is a little bit longer.</p>
             </div>
-        </nav>
-        <header>
-                <div class="container">
-                    <div class="row">
-                        <div class="page-header">
-                                <div class="intro-text">
-                                    <div class="intro-lead-in" style="color:red">It's Nice To Meet You</div>
-                                    <div class="intro-lead-in">Our today's Random Word is:</div>
-                                    <div class="todaysword" id="data-num">'Random Word'</div>
-                                    <div class="calendar">
-                                        <div class="cal-search" style="color:dimgray;">Look for previous words by clicking the date you choose </div>   
-                                        <input type="date" />
-                                        <button type="btn btn-primary">Search</button>
-                                    </div>
-                                    <div class="formFile"></div>
-                                    <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
-                                        
-                                        <input type="file" name="imagename" id="imagename">
-                                        <input type="submit" name="submit" value="submit">
-                                    </form>
-                                </div>
-                        </div>    
-                    </div>
-                </div>  
-                <div class="flex">
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                    <div class="imgloc">Div</div>
-                </div>
+         </div>
+         <div class="card p-3">
+            <blockquote class="blockquote mb-0 card-body">
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+               <footer class="blockquote-footer">
+                  <small class="text-muted">
+                     Someone famous in
+                     <cite title="Source Title">Source Title</cite>
+                  </small>
+               </footer>
+            </blockquote>
+         </div>
+         <div class="card">
+            <img class="card-img-top" src=".../100px160/" alt="Card image cap">
+            <div class="card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+               <p class="card-text">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+               </p>
+            </div>
+         </div>
+         <div class="card bg-primary text-white text-center p-3">
+            <blockquote class="blockquote mb-0">
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+               <footer class="blockquote-footer">
+                  <small>
+                     Someone famous in
+                     <cite title="Source Title">Source Title</cite>
+                  </small>
+               </footer>
+            </blockquote>
+         </div>
+         <div class="card text-center">
+            <div class="card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+               <p class="card-text">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+               </p>
+            </div>
+         </div>
+         <div class="card">
+            <img class="card-img" src=".../100px260/" alt="Card image">
+         </div>
+         <div class="card p-3 text-right">
+            <blockquote class="blockquote mb-0">
+               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+               <footer class="blockquote-footer">
+                  <small class="text-muted">
+                     Someone famous in
+                     <cite title="Source Title">Source Title</cite>
+                  </small>
+               </footer>
+            </blockquote>
+         </div>
+         <div class="card">
+            <div class="card-body">
+               <h5 class="card-title">Card title</h5>
+               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has
+                  even longer content than the first to show that equal height action.</p>
+               <p class="card-text">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+               </p>
+            </div>
+         </div>
+      </div>
 
 
+      <div class="container">
+         <div class="row">
 
+            <div class="page-header">
+               <div class="intro-text">
+                  <!-- <div class="intro-lead-in" style="color:red">It's Nice To Meet You</div> -->
+                  <div class="intro-lead-in">Daily Random Word</div>
+                  <div class="todaysword" id="data-num">Spaghetti</div>
+                  <div class="calendar">
+                     <div class="cal-search" style="color:dimgray;">Look for previous words by clicking the date you choose </div>
+                     <input type="date" />
+                     <button type="btn btn-primary">Search</button>
+                  </div>
+                  <div class="formFile"></div>
+                  <form class="uploadImage" enctype="multipart/form-data" action="/add" method="POST">
 
+                     <input type="file" name="imagename" id="imagename">
+                     <input type="submit" name="submit" value="submit">
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
 
-</header>
-    <script src="jquery/dist/jquery.js"></script>
-    <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
-    <script src="handlebars/dist/handlebars.js"></script>
-    <script src="main.js" type="module"></script>
-  </body>
+      <div class="flex">
+         <div class="imgloc">Div</div>
+         <div class="imgloc">Div</div>
+         <div class="imgloc">Div</div>
+         <div class="imgloc">Div</div>
+         <div class="imgloc">Div</div>
+         <div class="imgloc">Div</div>
+         <div class="imgloc">Div</div>
+         <div class="imgloc">Div</div>
+         <div class="imgloc">Div</div>
+      </div>
+
+   </header>
+   <script src="jquery/dist/jquery.js"></script>
+   <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
+   <script src="handlebars/dist/handlebars.js"></script>
+   <script src="main.js" type="module"></script>
+</body>
+
 </html>
