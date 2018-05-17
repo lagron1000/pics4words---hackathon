@@ -15,18 +15,12 @@ class DaysRepository {
             if (!data1[0]){
                 console.log('TESTTTTTTTTTTTTTTTTTTTT')
                 console.log(data1)
-                this.wordApi.fetch().then((data)=>{
-
+                return this.wordApi.fetch().then((data)=>{
                     console.log(data)
                     var today = new Date;
                     var getFullDay = today.getMonth()+1 + '-' + today.getDate() + '-' + today.getFullYear()
                     this.word = data[0].word
                     this.day = getFullDay
-                    this.oxfordApi.fetch(this.word).then((oxData)=>{
-                        console.log(oxData.senses[0].definitions[0])
-                    this.description = oxData.senses[0].definitions[0]
-                    })
-                    this.addDay(this.day, this.word, this.description)
                 })
             } else {
                 console.log(data1)
@@ -35,6 +29,13 @@ class DaysRepository {
                 this.images = data1[0].images
             }
         })
+    }
+    initOxford(){
+        return this.oxfordApi.fetch(this.word).then((oxData)=>{
+            console.log(oxData.senses[0].definitions[0])
+        this.description = oxData.senses[0].definitions[0]
+        })
+        this.addDay(this.day, this.word, this.description)
     }
     addDay(day, word){
         var dayObj = {day: day, word: word}
