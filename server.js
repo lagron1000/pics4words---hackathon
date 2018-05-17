@@ -104,6 +104,27 @@ app.use(bodyParser.urlencoded({ extended: false }));
     })
   })
 
+
+  //handle rates
+
+  app.put('/days/:id', function (req, res){
+    var id = req.params.id
+    var rate = 5;
+    Image.findByIdAndUpdate(id, {rating: rate}, function (request, respond) {
+      if (err){
+        res.send(err)
+       } else {
+         res.send("Updated")
+       }
+
+
+    })
+
+
+
+
+  })
+
 //Function used to configure the middleware storage
 var storage = multer.diskStorage({
   destination: function(req, file, callback){
@@ -116,10 +137,13 @@ var storage = multer.diskStorage({
 });
 var upload = multer({storage: storage});
 
-app.post('/add', upload.single('imagename'), function(req, res, next) {
+app.post('/add/:userName', upload.single('imagename'), function(req, res, next) {
   console.log("updating photo ////")
+  var userName = req.params.userName;
+  console.log(req.file)
   var image = 'uploads/' + req.file.filename;
-  var newImgObj = {url: image, user: "req.file", rating = 0}
+  console.log(req.file)
+  var newImgObj = {url: image, user: userName, rating : 0}
   var img = new Image(newImgObj)
   img.save(function (err, dbImage){
     if(err)
