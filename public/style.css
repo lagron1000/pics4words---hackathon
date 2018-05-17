@@ -16,6 +16,7 @@
    display: block;
    float: left;
    padding: 0.3125rem 0rem;
+   margin-right: 30px;
 }
 .headerDayWord_ {
    font-family: 'PT Serif', serif;
@@ -25,7 +26,7 @@
 
 .slogan_ {
    float: left;
-   padding: 0.54rem 0rem 0.54rem 0.5rem;
+   padding: 0.54rem 0rem 0.54rem 0rem;
 }
 
 /* Header ------------------------------------------ */
@@ -88,12 +89,12 @@ main {
 /* Past Days -------------------- */
 
 .pastDays_ {
-   padding-bottom: 20px;
+   padding-bottom: 10px;
    overflow-x: scroll;
 }
 
 .pastday_ {
-   margin-right: 10px;
+   margin: 0px 10px 10px 0px;
    background-color: #b4b4b5;
    border: 0;
 }

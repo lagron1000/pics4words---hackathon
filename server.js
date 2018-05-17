@@ -119,7 +119,7 @@ var upload = multer({storage: storage});
 app.post('/add', upload.single('imagename'), function(req, res, next) {
   console.log("updating photo ////")
   var image = 'uploads/' + req.file.filename;
-  var newImgObj = {url: image, user: "req.file"}
+  var newImgObj = {url: image, user: "req.file", rating = 0}
   var img = new Image(newImgObj)
   img.save(function (err, dbImage){
     if(err)
