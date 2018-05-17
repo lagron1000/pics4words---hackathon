@@ -72,7 +72,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //3) to handle deleting an Image
 
-     app.delete('/days/:date/images:id', function (req,res){
+     app.delete('/days/:id', function (req,res){
     
         var id = req.params.id;
             
