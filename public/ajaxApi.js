@@ -38,7 +38,7 @@ class daysApi{
     deleteImage(id){
         return $.ajax({
             method: "DELETE",
-            url: "/days"+id,
+            url: "/days/"+id,
         }).catch(function(data){
             console.log(data)
         })

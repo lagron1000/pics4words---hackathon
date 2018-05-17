@@ -21,6 +21,8 @@ class DaysRepository {
                     var getFullDay = today.getMonth()+1 + '-' + today.getDate() + '-' + today.getFullYear()
                     this.word = data[0].word
                     this.day = getFullDay
+                }).then(()=>{
+                    return this.addDay(this.day, this.word)
                 })
             } else {
                 console.log(data1)
@@ -76,7 +78,11 @@ class DaysRepository {
         }
         imagesArr[findById(id, imagesArr)].rating++
         console.log(imagesArr[findById(id, imagesArr)].rating)
-        return this.daysApi.putLike(id, imagesArr[findById(id, imagesArr)].rating)
+        return this.daysApi.putLike(id, imagesArr[findById(id, imagesArr)].rating).then(()=>{
+            if (imagesArr[findById(id, imagesArr)].rating<-9){
+                return this.daysApi.deleteImage(id)
+            }
+        })
     }
     disslikeImage(id){
         var imagesArr = this.images
@@ -89,7 +95,11 @@ class DaysRepository {
         }
         imagesArr[findById(id, imagesArr)].rating--
         console.log(imagesArr[findById(id, imagesArr)].rating)
-        return this.daysApi.putDisslike(id, imagesArr[findById(id, imagesArr)].rating)
+        return this.daysApi.putDisslike(id, imagesArr[findById(id, imagesArr)].rating).then(()=>{
+            if (imagesArr[findById(id, imagesArr)].rating<-9){
+                return this.daysApi.deleteImage(id)
+            }
+        })
     }
 }
 
