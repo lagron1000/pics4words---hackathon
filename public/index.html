@@ -2,27 +2,27 @@
 <html>
 
 <head>
-   <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-   <link href="style.css" rel="stylesheet">
-   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-   <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|PT+Serif:400,700" rel="stylesheet">
-   <meta charset="UTF-8">
-   <title>Pics4words</title>
+      <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+      <link href="style.css" rel="stylesheet">
+      <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|PT+Serif:400,700" rel="stylesheet">
+      <meta charset="UTF-8">
+      <title>Pics4words</title>
 
 </head>
 
 <body>
 
-   <nav class="navbar navBar_">
-      <div>
-         <a class="navbar-brand logo_" href="#">Pics4words</a>
-         <span class="slogan_">
-               <span>Sumbit your </span>
-               <span class="headerDayWord_"></span>
-               <span>picture</span>
-         </span>
-      </div>
-      <!-- 
+      <nav class="navbar navBar_">
+            <div>
+                  <a class="navbar-brand logo_" href="#">Pics4words</a>
+                  <span class="slogan_">
+                        <span>Sumbit your </span>
+                        <span class="headerDayWord_"></span>
+                        <span>picture</span>
+                  </span>
+            </div>
+            <!-- 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
          aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -36,63 +36,66 @@
                </li>
             </ul>
          </div> -->
-   </nav>
+      </nav>
 
 
-   <header>
-      <div class="jumbotron jumbotron-fluid headerUpload_">
-         <div class="container headerUploadContainer_">
-            <p>Daily Word</p>
-            <h1 class="todaysWord" id="data-num">
-               <span class="WOTD"></span>
-            </h1>
-            <form class="uploadImage1" enctype="multipart/form-data" action="/add" method="POST">
-               <div class="custom-file photoUpload_">
-                  <input type="file" class="myFile custom-file-input uploadPicture_" id="imagename" name="imagename">
-                  <label class="custom-file-label uploadImageLabel_" for="customFile">Upload picture</label>
-                  <input type="text" class="form-control uploadPicture_" id="userName" placeholder="Username">
-                  <button id="butsubmit" type="button" class="btn btn-primary">Submit</button>
-               </div>
-            </form>
-         </div>
-      </div>
-   </header>
+      <header>
+            <div class="jumbotron jumbotron-fluid headerUpload_">
+                  <div class="container headerUploadContainer_">
+                        <p>Daily Word</p>
+                        <h1 class="todaysWord" id="data-num">
+                              <span class="WOTD"></span>
+                        </h1>
+                        <form class="uploadImage1" enctype="multipart/form-data" action="/add" method="POST">
+                              <div class="custom-file photoUpload_">
+                                    <input type="file" class="myFile custom-file-input uploadPicture_" id="imagename" name="imagename">
+                                    <label class="custom-file-label uploadImageLabel_" for="customFile">Upload picture</label>
+                                    <input type="text" class="form-control uploadPicture_" id="userName" placeholder="Username">
+                                    <button id="butsubmit" type="button" class="btn btn-primary">Submit</button>
+                              </div>
+                        </form>
+                  </div>
+            </div>
+      </header>
 
-   <main>
-      <div class="btn-toolbar pastDays_" role="toolbar" aria-label="Toolbar with button groups">
-         <!-- <div class="btn-group mr-2" role="group" aria-label="First group"></div> -->
-         <button class="btn btn-primary pastday_" type="button">
-            <span>16.05</span>
-            <span> - </span>
-            <span>Flowers</span>
-         </button>
+      <main>
+            <div class="btn-toolbar pastDays_" role="toolbar" aria-label="Toolbar with button groups">
+                  <!-- <div class="btn-group mr-2" role="group" aria-label="First group"></div> -->
+                  <button class="btn btn-primary pastday_" type="button">
+                        <span>16.05</span>
+                        <span> - </span>
+                        <span>Flowers</span>
+                  </button>
 
-         <button class="btn btn-primary pastday_" type="button">
-            <span>15.05</span>
-            <span> - </span>
-            <span>Vacation</span>
-         </button>
+                  <button class="btn btn-primary pastday_" type="button">
+                        <span>15.05</span>
+                        <span> - </span>
+                        <span>Vacation</span>
+                  </button>
 
-         <button class="btn btn-primary pastday_" type="button">
-            <span>14.05</span>
-            <span> - </span>
-            <span>Mother</span>
-         </button>
-      </div>
+                  <button class="btn btn-primary pastday_" type="button">
+                        <span>14.05</span>
+                        <span> - </span>
+                        <span>Mother</span>
+                  </button>
+            </div>
 
-      <div class="currentDay card-columns"></div>
-      </div>
-   </main>
+            <div class="currentDay card-columns"></div>
+            </div>
+      </main>
 
 
-   <script id="day-template" type="text/x-handlebars-template">
-      <div class="card" data-id="{{_id}}">
+      <script id="day-template" type="text/x-handlebars-template">
+      <div class="post card" data-id="{{_id}}">
          <img class="card-img" src="{{url}}" alt="Card image">
          <div class="card-body cardBody_">
             <span class="card-title cardTitle_">Username</span>
             <div class="rateBtn_">
+               <a class='disslike' href="#">
+                  <i class="fa fa-thumbs-down" style="color: orangered"></i>
+               </a>
                <span>70</span>
-               <a href="#">
+               <a class='like' href="#">
                   <i class="fa fa-thumbs-up"></i>
                </a>
             </div>
@@ -101,18 +104,18 @@
 
    </script>
 
-   <script id="word-template" type="text/x-handlebars-template">
+      <script id="word-template" type="text/x-handlebars-template">
       <h1 class="todaysWord">{{word}}</h1>
    </script>
 
-   <script id="header-template" type="text/x-handlebars-template">
+      <script id="header-template" type="text/x-handlebars-template">
       <span>{{word}}</span>
    </script>
 
-   <script src="jquery/dist/jquery.js"></script>
-   <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
-   <script src="handlebars/dist/handlebars.js"></script>
-   <script src="main.js" type="module"></script>
+      <script src="jquery/dist/jquery.js"></script>
+      <script src="/@claviska/jquery-ajaxSubmit/jquery.ajaxSubmit.js"></script>
+      <script src="handlebars/dist/handlebars.js"></script>
+      <script src="main.js" type="module"></script>
 </body>
 
 </html>

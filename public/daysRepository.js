@@ -1,10 +1,12 @@
 class DaysRepository {
-    constructor(daysApi, wordApi,date, word){
+    constructor(daysApi, wordApi, oxfordApi, date, word, description){
         this.daysApi = daysApi;
         this.wordApi = wordApi;
+        this.oxfordApi = oxfordApi;
         this.day = date;
         this.word = word;
-        this.images = []
+        this.images = [];
+        this.description = description
     }
     initData(){
         var currentDay = new Date()
@@ -14,12 +16,17 @@ class DaysRepository {
                 console.log('TESTTTTTTTTTTTTTTTTTTTT')
                 console.log(data1)
                 this.wordApi.fetch().then((data)=>{
+
                     console.log(data)
                     var today = new Date;
                     var getFullDay = today.getMonth()+1 + '-' + today.getDate() + '-' + today.getFullYear()
                     this.word = data[0].word
                     this.day = getFullDay
-                    this.addDay(this.day, this.word)
+                    this.oxfordApi.fetch(this.word).then((oxData)=>{
+                        console.log(oxData.senses[0].definitions[0])
+                    this.description = oxData.senses[0].definitions[0]
+                    })
+                    this.addDay(this.day, this.word, this.description)
                 })
             } else {
                 console.log(data1)
@@ -52,10 +59,34 @@ class DaysRepository {
             }
         })
     }
-    removeImage(date, id){
-        this.daysApi.deleteImage(date, id).then((data)=>{
+    removeImage(id){
+        return this.daysApi.deleteImage(id).then((data)=>{
             this.images = data.images
         })
+    }
+    likeImage(id){
+        var findById = function(picsId){
+            for (let i=0; i<this.images.length; i++){
+                if(this.images[i]._id === picsId){
+                    return i
+                }
+                return
+            }
+        }
+        this.images[findById(id)].rating++
+        return this.daysApi.putLike(id, this.images[findById(id)].rating)
+    }
+    disslikeImage(id){
+        var findById = function(picsId){
+            for (let i=0; i<this.images.length; i++){
+                if(this.images[i]._id === picsId){
+                    return i
+                }
+                return
+            }
+        }
+        this.images[findById(id)].rating--
+        return this.daysApi.putLike(id, this.images[findById(id)].rating)
     }
 }
 
