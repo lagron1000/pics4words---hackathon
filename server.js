@@ -58,7 +58,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
                         
         var date = req.params.date;
         Day.find({day : date}, function (req, day){
-        }).populate('images').exec(function(err, day){
+        }).populate({path: 'images', options: {sort: {'rating': -1}}}).exec(function(err, day){
           if (err){
             console.log(err)
           } else {
@@ -107,10 +107,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
   //handle rates
 
-  app.put('/days/:id', function (req, res){
+  app.put('/days/:id/rate/:rate', function (req, res){
     var id = req.params.id
-    var rate = 5;
-    Image.findByIdAndUpdate(id, {rating: rate}, function (request, respond) {
+    console.log(req.params.rate)
+    var rate = req.params.rate;
+    Image.findByIdAndUpdate(id, {rating: rate}, function (err, respond) {
       if (err){
         res.send(err)
        } else {

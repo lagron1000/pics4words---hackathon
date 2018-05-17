@@ -3,6 +3,7 @@ class eventsHandler {
         this.daysRepository = daysRepository;
         this.renderer = renderer;
         this.$day = $(".uploadImage");
+        this.$likeBtn =  $(".currentDay");
     }
         registerAddImage(){
             $('#butsubmit').click( (e) =>{
@@ -13,15 +14,19 @@ class eventsHandler {
              })
         }
         registerLikeImage(){
-            $(".like").click(()=>{
-                var $image = $(event.currentTarget).closest('.post')
-                this.daysRepository.likeImage($image.data(id))
+            this.$likeBtn.on('click', '.like', (event)=>{
+                let myId = $(event.currentTarget).closest('.post').data('id');
+                this.daysRepository.likeImage(myId).then( () => {
+                    this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
+                })
             })
         }
         registerDIsslikeImage(){
-            $(".disslike").click(()=>{
-                var $image = $(event.currentTarget).closest('.post')
-                this.daysRepository.disslikeImage($image.data(id))
+            this.$likeBtn.on('click', '.disslike', (event)=>{
+                let myId = $(event.currentTarget).closest('.post').data('id');
+                this.daysRepository.disslikeImage(myId).then( () => {
+                    this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
+                })
             })
         }
     }

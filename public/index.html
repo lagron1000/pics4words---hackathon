@@ -80,7 +80,7 @@
                   </button>
             </div>
 
-            <div class="currentDay card-columns"></div>
+            <div class="currentDay card-decks"></div>
             </div>
       </main>
 
@@ -89,13 +89,13 @@
       <div class="post card" data-id="{{_id}}">
          <img class="card-img" src="{{url}}" alt="Card image">
          <div class="card-body cardBody_">
-            <span class="card-title cardTitle_">Username</span>
+            <span class="card-title cardTitle_">{{user}}</span>
             <div class="rateBtn_">
-               <a class='disslike' href="#">
+               <a class='disslike' href="#{{_id}}">
                   <i class="fa fa-thumbs-down" style="color: orangered"></i>
                </a>
-               <span>70</span>
-               <a class='like' href="#">
+               <span>{{rating}}</span>
+               <a class='like' href="#{{_id}}">
                   <i class="fa fa-thumbs-up"></i>
                </a>
             </div>
