@@ -58,7 +58,7 @@
             </div>
       </header>
 
-      <main>
+      <main class="dayTools">
             <div class="btn-toolbar pastDays_" role="toolbar" aria-label="Toolbar with button groups">
                   <!-- <div class="btn-group mr-2" role="group" aria-label="First group"></div> -->
                   <button class="btn btn-primary pastday_" type="button">
@@ -80,7 +80,7 @@
                   </button>
             </div>
 
-            <div class="currentDay card-decks"></div>
+            <div class="currentDay card-columns"></div>
             </div>
       </main>
 
@@ -104,7 +104,16 @@
 
    </script>
 
-      <script id="word-template" type="text/x-handlebars-template">
+   <script id="toolbar-template" type="text/x-handlebars-template">
+      <button class="btn btn-primary pastday_" type="button">
+                  <span>{{day}}</span>
+                  <span> - </span>
+                  <span>{{word}}</span>
+      </button>
+
+   </script>
+
+   <script id="word-template" type="text/x-handlebars-template">
       <h1 class="todaysWord">{{word}}</h1>
    </script>
 
