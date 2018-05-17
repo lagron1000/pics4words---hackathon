@@ -55,8 +55,8 @@ class daysApi{
     putLike(id, content){
         return $.ajax({
             method: "PUT",
-            url: "/days/" + id,
-            data: content
+            url: "/days/" + id + "/rate/" + content,
+            data: 'content'
         }).catch(function(data){
             console.log(data)
         })    
@@ -64,8 +64,8 @@ class daysApi{
     putDisslike(id, content){
         return $.ajax({
             method: "PUT",
-            url: "/days/" + id,
-            data: content
+            url: "/days/" + id + "/rate/" + content,
+            data: 'content'
         }).catch(function(data){
             console.log(data)
         })    

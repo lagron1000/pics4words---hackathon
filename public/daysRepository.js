@@ -65,28 +65,30 @@ class DaysRepository {
         })
     }
     likeImage(id){
-        var findById = function(picsId){
-            for (let i=0; i<this.images.length; i++){
-                if(this.images[i]._id === picsId){
+        var imagesArr = this.images
+        var findById = function(picsId, Arr){
+            for (let i=0; i<imagesArr.length; i++){
+                while (imagesArr[i]._id === picsId){
                     return i
                 }
-                return
             }
         }
-        this.images[findById(id)].rating++
-        return this.daysApi.putLike(id, this.images[findById(id)].rating)
+        imagesArr[findById(id, imagesArr)].rating++
+        console.log(imagesArr[findById(id, imagesArr)].rating)
+        return this.daysApi.putLike(id, imagesArr[findById(id, imagesArr)].rating)
     }
     disslikeImage(id){
-        var findById = function(picsId){
-            for (let i=0; i<this.images.length; i++){
-                if(this.images[i]._id === picsId){
+        var imagesArr = this.images
+        var findById = function(picsId, Arr){
+            for (let i=0; i<imagesArr.length; i++){
+                while (imagesArr[i]._id === picsId){
                     return i
                 }
-                return
             }
         }
-        this.images[findById(id)].rating--
-        return this.daysApi.putLike(id, this.images[findById(id)].rating)
+        imagesArr[findById(id, imagesArr)].rating--
+        console.log(imagesArr[findById(id, imagesArr)].rating)
+        return this.daysApi.putDisslike(id, imagesArr[findById(id, imagesArr)].rating)
     }
 }
 
