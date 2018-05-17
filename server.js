@@ -142,9 +142,10 @@ app.post('/add/:userName', upload.single('imagename'), function(req, res, next) 
   var userName = req.params.userName;
   console.log(req.file)
   var image = 'uploads/' + req.file.filename;
-  console.log(req.file)
+
   var newImgObj = {url: image, user: userName, rating : 0}
   var img = new Image(newImgObj)
+  
   img.save(function (err, dbImage){
     if(err)
         res.send("failed")

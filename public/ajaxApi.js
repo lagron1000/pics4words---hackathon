@@ -35,10 +35,10 @@ class daysApi{
             console.log(data)
         })
     }
-    deleteImage(date, id){
+    deleteImage(id){
         return $.ajax({
             method: "DELETE",
-            url: "/days/" + date + "/images/" + id
+            url: "/days"+id,
         }).catch(function(data){
             console.log(data)
         })
@@ -51,6 +51,24 @@ class daysApi{
         }).catch(function(data){
             console.log(data)
         })
+    }
+    putLike(id, content){
+        return $.ajax({
+            method: "PUT",
+            url: "/days/" + id,
+            data: content
+        }).catch(function(data){
+            console.log(data)
+        })    
+    }
+    putDisslike(id, content){
+        return $.ajax({
+            method: "PUT",
+            url: "/days/" + id,
+            data: content
+        }).catch(function(data){
+            console.log(data)
+        })    
     }
     }
 
