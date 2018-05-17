@@ -12,6 +12,8 @@ let EventsHandler = new eventsHandler(dayRepository, Renderer);
 
 
 EventsHandler.registerAddImage();
+EventsHandler.registerLikeImage();
+EventsHandler.registerDIsslikeImage();
 // eventsHandler.registerRemovePost();
 // eventsHandler.registerToggleComments();
 // eventsHandler.registerAddComment();

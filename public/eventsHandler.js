@@ -11,10 +11,18 @@ class eventsHandler {
                 })
                     
              })
-            
-
-                
-            
+        }
+        registerLikeImage(){
+            $(".like").click(()=>{
+                var $image = $(event.currentTarget).closest('.post')
+                this.daysRepository.likeImage($image.data(id))
+            })
+        }
+        registerDIsslikeImage(){
+            $(".disslike").click(()=>{
+                var $image = $(event.currentTarget).closest('.post')
+                this.daysRepository.disslikeImage($image.data(id))
+            })
         }
     }
 
