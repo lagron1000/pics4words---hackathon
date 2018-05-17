@@ -14,9 +14,10 @@ class daysApi{
     uploadPhoto(e){
         e.preventDefault();    
         var formData = new FormData( $('.uploadImage1')[0]);
+        
     
         return $.ajax({
-            url: "/add",
+            url: "/add/"+$('#userName').val(),
             type: 'POST',
             data: formData,
             cache: false,
@@ -70,6 +71,8 @@ class daysApi{
         })    
     }
     }
+
+    
 
 
 export default  daysApi 
