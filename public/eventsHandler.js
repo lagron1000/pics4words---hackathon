@@ -20,7 +20,9 @@ class eventsHandler {
             this.$likeBtn.on('click', '.like', (event)=>{
                 let myId = $(event.currentTarget).closest('.post').data('id');
                 this.daysRepository.likeImage(myId).then( () => {
-                    this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
+                    this.daysRepository.initData().then(()=>{
+                        this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
+                    })
                 })
             })
         }
@@ -28,7 +30,9 @@ class eventsHandler {
             this.$likeBtn.on('click', '.disslike', (event)=>{
                 let myId = $(event.currentTarget).closest('.post').data('id');
                 this.daysRepository.disslikeImage(myId).then( () => {
-                    this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
+                    this.daysRepository.initData().then(()=>{
+                        this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
+                    })
                 })
             })
         }
