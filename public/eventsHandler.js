@@ -7,10 +7,13 @@ class eventsHandler {
     }
         registerAddImage(){
             $('#butsubmit').click( (e) =>{
-                this.daysRepository.addImage(e).then( () => {
-                    this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
-                })
-                    
+                if ($('#userName').val() === ""){
+                    alert('Please enter text!')
+                } else {
+                    this.daysRepository.addImage(e).then( () => {
+                        this.renderer.renderDay(this.daysRepository.images, this.daysRepository)
+                    })
+                }
              })
         }
         registerLikeImage(){

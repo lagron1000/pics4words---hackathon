@@ -76,15 +76,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
     
         var id = req.params.id;
             
-        Image.find({ _id: id}, (req,res) =>{
-          console.log(res)
-        })
+        // Image.find({ _id: id}, (req,res) =>{
+        //   console.log(res)
+        // })
         
-        Image.remove({ _id : id}, function(err, res1){
+        Image.findByIdAndRemove(id, function(err, res1){
            if(err)
              res.send("failed")
            else{
-            
             console.log ("removed")
             res.send("Deleted")
            }
