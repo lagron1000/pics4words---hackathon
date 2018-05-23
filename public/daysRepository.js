@@ -79,7 +79,7 @@ class DaysRepository {
         imagesArr[findById(id, imagesArr)].rating++
         console.log(imagesArr[findById(id, imagesArr)].rating)
         return this.daysApi.putLike(id, imagesArr[findById(id, imagesArr)].rating).then(()=>{
-            if (imagesArr[findById(id, imagesArr)].rating<-9){
+            if (imagesArr[findById(id, imagesArr)].rating<-5){
                 return this.daysApi.deleteImage(id)
             }
         })
@@ -96,7 +96,7 @@ class DaysRepository {
         imagesArr[findById(id, imagesArr)].rating--
         console.log(imagesArr[findById(id, imagesArr)].rating)
         return this.daysApi.putDisslike(id, imagesArr[findById(id, imagesArr)].rating).then(()=>{
-            if (imagesArr[findById(id, imagesArr)].rating<-9){
+            if (imagesArr[findById(id, imagesArr)].rating<-5){
                 return this.daysApi.deleteImage(id)
             }
         })
