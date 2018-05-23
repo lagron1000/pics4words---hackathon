@@ -10,8 +10,12 @@ var fs = require('fs');
 
 // const SERVER_PORT = 8080;
 
-mongoose.connect(process.env.CONNECTION_STRING || 'mongodb://localhost/pics4wordsDB', function() {
+mongoose.connect(process.env.CONNECTION_STRING || 'mongodb://localhost/pics4wordsDB', function(err, result) {
+  if (err){
+    console.log(err)
+  } else {
   console.log("DB connection established!!!");
+  }
 })
 
 // Requirements to Models 
