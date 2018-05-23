@@ -10,7 +10,7 @@ var fs = require('fs');
 
 const SERVER_PORT = 8080;
 
-mongoose.connect('mongodb://localhost/pics4wordsDB', function() {
+mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/pics4wordsDB', function() {
   console.log("DB connection established!!!");
 })
 
@@ -168,6 +168,7 @@ app.post('/add/:userName', upload.single('imagename'), function(req, res, next) 
 
 
 
-app.listen(SERVER_PORT, () => {
+app.listen(process.env.PORT || '8080', () => {
   console.log("Server started on port " + SERVER_PORT);
 });
+
